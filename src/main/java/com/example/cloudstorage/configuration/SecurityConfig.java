@@ -1,6 +1,7 @@
 package com.example.cloudstorage.configuration;
 
 
+import com.example.cloudstorage.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
