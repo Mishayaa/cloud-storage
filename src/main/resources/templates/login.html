@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template-part/header :: header">
+</head>
+<body>
+<section class="login-page">
+    <div th:replace="template-part/navigation-menu :: nav"></div>
+    <div class="container form-container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Войти в личный кабинет</h2>
+                <form name="f" th:action="@{/perform-login}" method="post">
+                    <div class="mb-3">
+                        <div th:if="${param.error}" class="alert alert-error">
+                            Неправильные имя и пароль.
+                        </div>
+                        <div th:if="${param.logout}" class="alert alert-success">
+                            You have been logged out.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputUserName" class="form-label"> Имя пользователя</label>
+                        <input type="text" name="username" class="form-control" id="exampleInputUserName" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Пароль</label>
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Войти</button>
+                </form>
+                <div class="mt-2">
+                    или
+                    <a href="/registration">Зарегистрироваться</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:replace="template-part/footer :: footer"></div>
+</section>
+</body>
+</html>

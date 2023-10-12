@@ -42,7 +42,7 @@ public class RegistrationController {
             return "registration";
         }
         if (!userService.createUser(userDto)) {
-            model.addAttribute("userExists", "Пользовател уже существует!");
+            model.addAttribute("userExists", "Пользователь уже существует!");
             return "registration";
         }
 

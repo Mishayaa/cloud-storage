@@ -35,7 +35,7 @@
                         <label for="exampleInputPassword2" class="form-label">Подтверждение пароля</label>
                         <input type="password" th:field="*{passwordConfirmation}" class="form-control " th:classappend="${passIsNotConfirm} ? 'is-invalid'" id="exampleInputPassword2">
                         <div id="validationPass" class="invalid-feedback">
-                            Пароли не совподают
+                            Пароли не совпадают
                         </div>
                         <div th:if="${#fields.hasErrors('passwordConfirmation')}" th:errors="*{passwordConfirmation}"></div>
                     </div>
